@@ -41,6 +41,7 @@ Destination.prototype.Destination = function() {
 function Todo(item, todoNote){
   this.todoItem = item;
   this.todoNote = todoNote;
+  this.todoNumber = [];
 }
 
 Todo.prototype.createTodo = function() {
@@ -48,9 +49,15 @@ Todo.prototype.createTodo = function() {
 }
 
 Todo.prototype.removeTodo = function() {
-  this.todoItem = ""
-  this.todoNote = ""
+  return this.todoItem
+
 }
+
+// function removeItem() {
+//   if ($("ul#todos").checked) {
+//
+//   }
+// }
 
 // user interface logic
 $(document).ready(function() {
@@ -135,7 +142,7 @@ $(document).ready(function() {
 
     var newTodo = new Todo(inputtedTodo, inputtedTodoNotes);
 
-    $("ul#todos").append("<li class=" + this.todoItem + "><button type='submit' id='delete'>X</button><span class='todo'>" + newTodo.createTodo() + "<span></li>")
+    $("ul#todos").append("<li id=" + this.todoItem +"><input type='checkbox' name='todo'> <label for='todo'><span class='todo'>" + newTodo.createTodo() + "<span></label></li>")
     console.log(newTodo)
 
     $(".todo").last().click(function(){
@@ -143,15 +150,18 @@ $(document).ready(function() {
       $("#show-todo h2").text(newTodo.todoItem)
       $(".todoNotes").text(newTodo.todoNote)
       console.log(this.Todo)
+
     })
     $("#todo").val("")
     $("#todoNotes").val("")
 
-    $("button#delete").click(function(){
+    $("#delete").click(function(){
+      if ( $( "input" ).is( ":checked" ) ) {
+        $("#" + this.todoItem).remove();
 
-      console.log("newTodo");
-      $("." + this.todoItem + "").remove();
-      // newTodo.removeTodo();
+
+        console.log("checked")
+      }
     });
   });
 });
