@@ -1,12 +1,12 @@
-#show-contact, #show-destination {
+#show-contact, #show-destination, #show-todo {
   display: none;
 }
 
-.contact, .destination {
+.contact, .destination, .todo {
   cursor: pointer;
   color: #0088cc;
 }
 
-.contact:hover, .destination {
+.contact:hover, .destination, .todo {
   text-decoration: underline;
 }

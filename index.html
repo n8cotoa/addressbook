@@ -40,6 +40,7 @@
           </div>
         </div>
       </div>
+
       <div class="row">
         <div class="col-md-6">
           <h2>Add a destination:</h2>
@@ -70,6 +71,31 @@
             <p>Notes: <span class="notes"></span></p>
           </div>
         </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Add a to-do:</h2>
+          <form id="new-todo">
+            <div class="form-group">
+              <label for="todo">To-do</label>
+              <input type="text" name="todo" value="" class="form-control" id="todo">
+              <label for="todoNotes"></label>
+              <input type="text" name="todoNotes" value="" class="form-control" id="todoNotes">
+            </div>
+            <button type="submit" id="sumbitTodo">Add To-Do</button>
+          </form>
+            <h2>To-Do's</h2>
+            <ul id="todos">
+
+            </ul>
+        </div>
+          <div class="col-md-6">
+            <div id="show-todo">
+              <h2></h2>
+              <p>Notes: <span class="todoNotes"></span></p>
+            </div>
+          </div>
       </div>
     </div>
   </body>

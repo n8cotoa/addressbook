@@ -19,6 +19,15 @@ Destination.prototype.Destination = function() {
   return this.location;
 }
 
+function Todo(item, todoNote){
+  this.todoItem = item;
+  this.todoNote = todoNote;
+}
+
+Todo.prototype.createTodo = function() {
+  return this.todoItem;
+}
+
 // user interface logic
 $(document).ready(function() {
   $("form#new-contact").submit(function(event) {
@@ -42,7 +51,7 @@ $(document).ready(function() {
     $("input#new-last-name").val("");
   });
 
-  $("#submit").click(function(event){
+  $("form#new-place").submit(function(event){
     event.preventDefault();
 
     var inputtedLocation = $("#location").val();
@@ -57,7 +66,7 @@ $(document).ready(function() {
     $(".destination").last().click(function() {
       $("#show-destination").show();
       $("#show-destination h2").text(newDestination.location);
-      $(".location").text(newDestination.landmark);
+      $(".landmark").text(newDestination.landmark);
       $(".time").text(newDestination.time);
       $(".notes").text(newDestination.note);
     });
@@ -66,4 +75,25 @@ $(document).ready(function() {
     $("#time").val("");
     $("#notes").val("");
   });
-});
+
+  $("form#new-todo").submit(function(event){
+    event.preventDefault();
+
+    var inputtedTodo = $("#todo").val();
+    var inputtedTodoNotes = $("#todoNotes").val();
+
+    var newTodo = new Todo(inputtedTodo, inputtedTodoNotes);
+
+    $("ul#todos").append("<li><span class='todo'>" + newTodo.createTodo() + "<span></li>")
+    console.log(newTodo)
+
+    $(".todo").last().click(function(){
+      $("#show-todo").show();
+      $("#show-todo h2").text(newTodo.todoItem)
+      $(".todoNotes").text(newTodo.todoNote)
+    })
+    $("#todo").val("")
+    $("#todoNotes").val("")
+
+  });
+  });
