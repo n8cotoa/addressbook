@@ -10,3 +10,11 @@
 .contact:hover, .destination, .todo {
   text-decoration: underline;
 }
+
+#todos {
+  list-style: none;
+}
+
+#todos button {
+  margin-right: 10px;
+}
