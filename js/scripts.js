@@ -158,9 +158,7 @@ $(document).ready(function() {
     $("#delete").click(function(){
       if ( $( "input" ).is( ":checked" ) ) {
         $("#" + this.todoItem).remove();
-
-
-        console.log("checked")
+        $("#show-todo").hide();
       }
     });
   });
