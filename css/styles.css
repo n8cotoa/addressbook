@@ -1,0 +1,12 @@
+#show-contact, #show-destination {
+  display: none;
+}
+
+.contact, .destination {
+  cursor: pointer;
+  color: #0088cc;
+}
+
+.contact:hover, .destination {
+  text-decoration: underline;
+}

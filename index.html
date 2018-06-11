@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Address book</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- remove styles link for Bootstrap 3.3.7 and uncomment below if you want to use Bootstrap 4.0.0 -->
+  <!--   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link href="css/styles.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/scripts.js"></script>
+</head>
+<body>
+    <div class="container">
+      <h1>Address book</h1>
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Add a contact:</h2>
+          <form id="new-contact">
+            <div class="form-group">
+              <label for="new-first-name">First name</label>
+              <input type="text" class="form-control" id="new-first-name">
+            </div>
+            <div class="form-group">
+              <label for="new-last-name">Last name</label>
+              <input type="text" class="form-control" id="new-last-name">
+            </div>
+            <button type="submit" class="btn">Add</button>
+          </form>
+          <h2>Contacts:</h2>
+          <ul id="contacts">
+
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <div id="show-contact">
+            <h2></h2>
+            <p>First name: <span class="first-name"></span></p>
+            <p>Last name: <span class="last-name"></span></p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Add a destination:</h2>
+          <form id="new-place">
+            <div class="form-group">
+            <label for="location">Location</label>
+            <input type="text" name="location" class="form-control" id="location">
+            <label for="landmarks">Landmarks</label>
+            <input type="text" name="landmarks" class="form-control" id="landmarks">
+            <label for="time">Time of Year</label>
+            <input type="text" name="time" class="form-control" id="time">
+            <label for="notes">Notes</label>
+            <input type="text" name="notes" class="form-control" id="notes">
+          </div>
+          <button id="submit" type="submit" class="btn btn-success">Submit</button>
+          </form>
+           <h2>Destinations:</h2>
+           <ul id="destinations">
+
+           </ul>
+        </div>
+        <div class="col-md-6">
+          <div id="show-destination">
+            <h2></h2>
+            <p>Location: <span class="location"></span></p>
+            <p>Landmarks: <span class="landmarks"></span></p>
+            <p>Time of Year: <span class="time"></span></p>
+            <p>Notes: <span class="notes"></span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
